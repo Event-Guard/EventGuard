@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EventGuard | Campus Workspace</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <main id="authView" class="auth-layout">
+    <section class="auth-intro">
+      <a class="brand" href="#"><span>EG</span> EventGuard</a>
+      <div class="intro-copy">
+        <h1 id="introTitle">Your campus events,<br>organized and secure.</h1>
+        <p>Book halls. Coordinate events. Resolve issues.</p>
+        <div class="intro-card"><h3>One place for every event</h3><p>Availability, approvals and incident updates work together in one simple platform.</p></div>
+        <div class="campus-art"><span class="sun"></span><div class="building"><i></i><i></i><i></i><b></b></div><div class="person one"></div><div class="person two"></div><div class="chat"></div></div>
+      </div>
+      <small>SMART HALL BOOKING&nbsp; • &nbsp;INCIDENT TRACKING</small>
+    </section>
+    <section class="auth-panel">
+      <div class="auth-form-wrap">
+        <p class="eyebrow" id="authEyebrow">WELCOME BACK</p>
+        <h2 id="authHeading">Sign in to EventGuard</h2>
+        <p class="muted" id="authSub">Enter your details to continue to your workspace.</p>
+        <form id="loginForm" class="form-stack">
+          <label>College email<input name="email" type="email" placeholder="Enter your college email" autocomplete="username" required></label>
+          <label>Password<input name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required></label>
+          <div class="between"><label class="check"><input type="checkbox" name="remember"> Remember me</label><a href="#" id="forgotLink">Forgot password?</a></div>
+          <button class="btn full" type="submit">Sign in</button>
+        </form>
+        <form id="registerForm" class="form-stack hidden">
+          <label>Full name<input name="name" minlength="3" maxlength="60" placeholder="Enter your full name" required></label>
+          <label>College email<input name="email" type="email" placeholder="you@college.edu" required></label>
+          <label>Role<select name="role" required><option value="">Select student / faculty / maintenance</option><option>Student</option><option>Faculty</option><option>Maintenance</option><option>Admin</option></select></label>
+          <label>Password<input name="password" type="password" minlength="8" placeholder="At least 8 characters" required></label>
+          <label>Confirm password<input name="confirmPassword" type="password" minlength="8" placeholder="Re-enter your password" required></label>
+          <label class="check"><input type="checkbox" name="agree" required> I agree to the platform usage policy.</label>
+          <button class="btn full" type="submit">Create account</button>
+        </form>
+        <p class="switch-auth" id="switchText">New to EventGuard? <a href="#" id="switchLink">Create an account</a></p>
+        <div id="authMessage" class="message hidden" role="alert"></div>
+        <p class="muted tiny">Demo mode: accounts and records are stored in server memory and reset when the server restarts.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="appView" class="app-layout hidden">
+    <aside class="sidebar">
+      <a class="brand" href="#"><span>EG</span> EventGuard</a>
+      <p class="side-label">CAMPUS WORKSPACE</p>
+      <nav>
+        <button data-page="dashboard" class="nav-link active">Overview</button>
+        <button data-page="halls" class="nav-link">Halls &amp; bookings</button>
+        <button data-page="events" class="nav-link">Events</button>
+        <button data-page="incidents" class="nav-link">Incidents</button>
+        <button data-page="maintenance" class="nav-link">Team &amp; reports</button>
+      </nav>
+      <div class="help"><b>NEED HELP?</b><p>Contact your campus administrator for support.</p></div>
+      <div class="profile"><span class="avatar" id="avatar">MV</span><div><b id="profileName">Megha Varshini</b><small id="profileRole">Student / Faculty</small></div></div>
+    </aside>
+    <section class="workspace">
+      <header class="topbar"><span>Workspace&nbsp; / &nbsp;<b id="crumb">Dashboard</b></span><div>Good morning, <b id="greeting">Megha</b> <button id="logoutBtn" class="logout">Sign out</button></div></header>
+      <div id="pageContent" class="page-content"></div>
+    </section>
+  </div>
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card"><button class="modal-close" id="modalClose" aria-label="Close">×</button><h2 id="modalTitle">Update incident</h2><form id="updateIncidentForm" class="form-stack"><input type="hidden" name="id"><label>Status<select name="status" required><option>Open</option><option>Assigned</option><option>In progress</option><option>Resolved</option></select></label><label>Repair / resolution notes<textarea name="notes" rows="4" placeholder="Add repair notes. Required to resolve."></textarea></label><button class="btn" type="submit">Save update</button><div id="modalMessage" class="message hidden"></div></form></div>
+  </div>
+  <script src="/js/app.js"></script>
+</body></html>

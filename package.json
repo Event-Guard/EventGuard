@@ -1,0 +1,13 @@
+{
+  "name": "eventguard-no-db",
+  "version": "1.0.0",
+  "description": "EventGuard - Smart Hall Booking with Incident Tracking (no database demo)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
